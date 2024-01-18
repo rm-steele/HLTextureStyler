@@ -8,7 +8,7 @@ To use the program, you put the executable file in the same directory as the .BM
 Once your directory is set up, run the program. The `new` folder will be filled with the modified images. Take these and compile them into a .WAD file once again. I did this using HLTT once again, but I believe the Half-Life SDK has a tool for this.
 in your Half-Life install, place
 
-## HL2 setup (and probably other Source games)
+## HL2 setup (and probably other Source games if you modify the instructions some)
 
 You'll need 4 programs.
 - GCFScape
@@ -16,13 +16,13 @@ You'll need 4 programs.
 - VTFEdit/VTFEdit Reloaded
 - HL2TextureStyler, either compiled by you or from the releases tab.
 
-1) Open `Half-Life 2\hl2\hl2_textures_dir.vpk` in GCFScape and right click on the materials folder. Extract it to an empty directory.
-2) Open that directory in command prompt and input the following: `vtex2 extract -f bmp -r -o .\extracted\ .\materials\`. Make sure vtex2 is in the same folder as your materials folder or in a PATH environment variable folder. Keep that command window open.
-3) Go into the `extracted` folder of the newly created folder and run this command in command prompt: `dir /B /S /A:-D > list.txt`. One more time, keep cmd open.
+1) Open `Half-Life 2\hl2\hl2_textures_dir.vpk` in GCFScape and expand the root folder. Right click and extract materials to an empty directory. 
+2) Open that directory in command prompt and input the following: `vtex2 extract -f bmp -r .\materials\`. Make sure vtex2 is in the same folder as your materials folder or in a PATH environment variable folder. Keep that command window open.
+3) Go into the materials folder and run this command in command prompt: `del /F /S /Q *.v??`, then run `dir /B /S /A:-D > list.txt`. One more time, keep cmd open.
 4) Move list.txt into the same folder as HL2TS. Make sure the entry for list.txt is the first entry in the file.
-5) Copy the `extracted` folder somewhere else, rename it `extracted_new`, and move it into the same directory as the original extracted folder
-6) Navigate to `extracted_new` with CMD and run `del /F /S /Q *.bmp`, then run HL2TS.
-7) IF `extracted_new` is filled with blocky textures, then open VTFEdit and go to Tools > Convert Folder. Set your input folder as `extracted_new` and your output folder as whatever you want. Select To VTF adn change the text in the box to be *.bmp. Check Recursive, uncheck Create VMT Files. Click Options and go to Advanced, then set the version to 7.1. Hit Convert. The program is likely to freeze, just give it some time.
+5) Copy the `materials` folder somewhere else, rename it `materials_new`, and move it into the same directory as the original materials folder
+6) Navigate to `materials_new` with CMD and run `del /F /S /Q *.bmp`, then run HL2TS.
+7) If `materials_new` is filled with blocky textures, then open VTFEdit and go to Tools > Convert Folder. Set your input folder as `materials_new` and your output folder as whatever you want. Select "To VTF" and change the text in the box to be *.bmp. Check Recursive, uncheck Create VMT Files. Click Options and go to Advanced, then set the version to 7.1. Hit Convert. The program is likely to freeze, just give it some time.
 8) Go into your Half-Life 2 files and open the folder `\hl2\`. Create a new folder called `custom` and put your output folder in there. The folder layout should be `Half-Life 2\hl2\custom\<your folder name>\materials\`
 
 You should now have modified textures.
