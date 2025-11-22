@@ -6,7 +6,6 @@ To use the program, you put the executable file in the same directory as the .BM
 ![image](https://github.com/rm-steele/HLTextureStyler/assets/152836752/2a980e13-fbb9-4959-b9e7-a6148f161422)
 
 Once your directory is set up, run the program. The `new` folder will be filled with the modified images. Take these and compile them into a .WAD file once again. I did this using HLTT once again, but I believe the Half-Life SDK has a tool for this.
-in your Half-Life install, place
 
 ## HL2 setup (and probably other Source games if you modify the instructions some)
 
