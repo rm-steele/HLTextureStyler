@@ -31,7 +31,7 @@ int main() {
     
     imgOld.open(str, std::fstream::in | std::fstream::binary);
     imgNew.open((str.insert(parentDir.length(), std::string_view("_new"), 0)), std::fstream::out | std::fstream::binary | std::fstream::trunc);
-    // IMPORTANT: this will not create any files is the folder des not exist
+    // IMPORTANT: this will not create any files is the folder does not exist
     // you must have <the folder in which you created list.txt>_new with the correct file tree as outlined in the instructions
 
     imgOld.seekg(0);
@@ -98,13 +98,13 @@ int main() {
 
     unsigned int width = ((unsigned char)output[0x13] * 256) + (unsigned char)output[0x12];
     unsigned int height = ((unsigned char)output[0x17] * 256) + (unsigned char)output[0x16];
-
+    
     /*
-      Write 8 pixels of accent color, then 8 pixels of black. Do this 8 times the image width.
-      Each bbyte is 2 pixels, so it works out to width * 8 / 2 = 4 * width. Then d the same but
-      with the colors flipped. Repeat this process 1/16th of the image height times becuase you
-      write 16 rows each iteration. Unlikely to work if the texture's width isn't a multiple of 8 or 16
-      */
+     * Write 8 pixels of accent color, then 8 pixels of black. Do this 8 times the image width.
+     * Each byte is 2 pixels, so it works out to width * 8 / 2 = 4 * width. Then do the same but
+     * with the colors flipped. Repeat this process 1/16th of the image height times becuase you
+     * write 16 rows each iteration. Unlikely to work if the texture's width isn't a multiple of 8 or 16
+     */
         
     for(int j{ 0 }; j < ceil(height / 16.0f); j++) {
         for(int i{ 0 }; i < 4 * width; i++) {
